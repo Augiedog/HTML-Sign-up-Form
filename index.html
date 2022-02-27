@@ -3,33 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vacation Time!</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Vacation Time! Sign up form</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <nav>
-        Enter the Contest for the Vacation of a Lifetime
+        Enter this Contest for the Vacation of a Lifetime!!
     </nav>
     <main>
         <h2>Vacation Contest Sign-Up Form</h2>
         <!--Set Action and Method Properties -->
-        <form method="GET" action="results.html"> 
+        <form action="/results.html" method="get"> 
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
+                <label for="firstname">Your First Name</label><span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" minlength="2" maxlength="35" required>
                 <!--Create a "lastname" input with type "text" -->
-                <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <label for="lastname">Your Last Name</label><span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" minlength="2" maxlength="35" required>
+                <label for="age">Your Age</label>
+                <input type="number" name="age" id="age" min="21" max="120">
+                <h5>Must be 21 to enter Contest</h5>
+                <label for="pwd">Password (must be 6 letters)<span class="required-field">*</span></label>
+                <input type="password" id="pwd" name="pwd" pattern="[a-zA-Z0-9]{6}" title="6-digit Alphanumric Pass Code" required>
             </div>
             <!--Make fieldset and legend -->
             <fieldset>
                 <legend>Contact information</legend>
                 <div>
                     <!--Email Input -->
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email">
+                    <label for="email">Your Email<span class="required-field">*</span></label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div>
+
                     <!--Street Address Input -->
                     <label for="address">Your Street Address</label>
                     <input type="text" id="address">
@@ -90,8 +96,8 @@
                         <option value="WV">West Virginia</option>
                         <option value="WY">Wyoming</option>
                     </select>
-                    <label for="zip">Your Zipcode</label>
-                    <input type="text" id="zip" name="zip">
+                    <label for="zip">Your Zip Code</label>
+                    <input type="number" id="zip" name="zip" pattern="[0-9]{5}" title="Zip Code">
                 </div>
             </fieldset>
             <fieldset><!-- Second fieldset -->           
@@ -107,7 +113,7 @@
                     <label for="japan">Japan</label>
                 </div>
                 <div>
-                    <input type="radio" id="reykjavik" name="location" value="Reykjavik"> 
+                    <input type="radio" id="reykjavik" name="location" value="Reykjavik" checked> 
                     <label for="reykjavik">Reykjavik</label>
                 </div>
                 <div>
@@ -134,7 +140,7 @@
                     <label for="ocean">Ocean View</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="drinks" name="extras" value="Drinks Package"> 
+                    <input type="checkbox" id="drinks" name="extras" value="Drinks Package" checked> 
                     <label for="drinks">All-inclusive Drinks Package</label>
                 </div>
             </fieldset>
